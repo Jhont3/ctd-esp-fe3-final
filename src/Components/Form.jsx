@@ -1,4 +1,3 @@
-import React from "react";
 import { useState } from "react";
 
 const initialState = {
@@ -8,6 +7,8 @@ const initialState = {
 
 const Form = () => {
   //Aqui deberan implementar el form completo con sus validaciones
+
+
 
   const [formValues, setFormValues] = useState(initialState);
   const [input, setInput] = useState();
@@ -35,8 +36,8 @@ const Form = () => {
     };
 
     setFormValues(input);
-    //mejor en objeto TODO
     setvalidation(true);
+    //mejor en objeto TODO
     document.getElementById('myform').reset();
   }
 

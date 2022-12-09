@@ -2,8 +2,7 @@ import Card from "../Components/Card";
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
-const Favs = () => {
-
+export const Favs = () => {
   const storage = JSON.parse(localStorage.getItem("favs"))
 
   return (
@@ -18,5 +17,3 @@ const Favs = () => {
     </>
   );
 };
-
-export default Favs;

@@ -1,3 +1,8 @@
+html {
+  box-sizing: border-box;
+  height: 100vh;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,6 +16,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
 .favButton{
   background-color: rgba(136, 136, 136, 0.116);
   padding: 10px;
@@ -21,13 +27,12 @@ code {
 
 h1{
   text-align: center;
- 
 }
 
 nav{
   display: flex;
-  width: 80vw;
-  justify-content: flex-start;
+  width: 100vw;
+  justify-content: space-around;
   padding: 1rem;
 }
 
@@ -43,23 +48,24 @@ a:hover{
 
 footer {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   text-align: center;
-  padding: 2rem;
+  padding: 2.8rem;
+  margin: 0px;
   position: relative;
   bottom: 0;
-  width: 90%;
+  width: 100vw;
   height: 40px;
-  margin-top: 2rem;
 }
 
-footer > img{
-  width: 200px;
+footer > div > img { 
+  width: 50px;
   margin: 0;
+  margin-left: 7px;
 }
-footer > p{
-  margin: 0;
-  padding-top: 0.7rem;
+
+footer > div > p {
+  margin: 110;
 }
 
 form{
@@ -101,7 +107,6 @@ table {
     width: 100%;
     display: table;
     border: 1px solid #ccc;
-
 }
 
 td, th {
@@ -118,6 +123,33 @@ tr:nth-child(even) {
   background-color: #12121296;
   color: white;
 }
+
 .dark > a {
   color: white;
 }
+
+nav .dark{
+  background-color: #150000;
+}
+
+footer .dark{
+    background-color: #150000;
+}
+
+nav > div{
+  display: flex;
+}
+
+nav > div > a {
+  margin-top: 14px;
+}
+
+nav button{
+  padding: 10px;
+  margin-left: 10px; 
+  border: none;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+

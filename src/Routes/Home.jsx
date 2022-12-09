@@ -4,9 +4,9 @@ import { ContextGlobal } from "../Components/utils/global.context";
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
-const Home = () => {
+export const Home = () => {
   const {data, getData} = useContext(ContextGlobal);
-  // console.log(data);
+  console.log(data);
 
   useEffect (() => {
     getData();
@@ -17,11 +17,8 @@ const Home = () => {
       <h1>Home</h1>
       <div className="card-grid">
         {/* Aqui deberias renderizar las cards */}
-       
        {data ? data.map((eachOne)=>(<Card key={eachOne.id} item={eachOne}/>)) : undefined}
       </div>
     </main>
   );
 };
-
-export default Home;

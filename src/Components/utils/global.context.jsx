@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { createContext } from "react";
 
 export const initialState = { theme: "light", data: [], getData: () => {}  };
@@ -9,6 +9,7 @@ export const ContextProvider = ({ children }) => {
   //Aqui deberan implementar la logica propia del Context, utilizando el hook useMemo
 
   const [data, setdata] = useState();
+  
 
   const getData = async () => {
     const reponse = await fetch("https://jsonplaceholder.typicode.com/users");
@@ -19,7 +20,7 @@ export const ContextProvider = ({ children }) => {
   const value = {
     ...initialState,
     data: data,
-    getData: getData
+    getData: getData,
   };
 
   return (

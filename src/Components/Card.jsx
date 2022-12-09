@@ -1,13 +1,24 @@
-import React from "react";
+
 import { Link } from "react-router-dom";
+
 
 const Card = ({item}) => {
   // console.log(item);
   const {name, username, id} = item;
 
-  const addFav = ()=>{
+  const addFav = () => {
     // Aqui iria la logica para agregar la Card en el localStorage
-    
+    const storage = localStorage.getItem("favs")
+    const listFavs = storage ? JSON.parse(storage) : []
+    console.log(listFavs);
+
+    const validacion = listFavs.some((fav) => fav.id === item.id);
+    console.log(validacion);
+    if(validacion) return;  
+
+    listFavs.push({ id: item.id, username:item.username, name: item.name });
+    localStorage.setItem('favs', JSON.stringify(listFavs));
+    alert("Dentist added");
   }
 
   return (
@@ -19,8 +30,8 @@ const Card = ({item}) => {
           <img src="./images/doctor.jpg" alt="Doctor" style={{width: "200px"}}></img>
           <h3>{name}</h3>
           <h4>{username}, Id: {id}</h4>
-          <button onClick={addFav} className="favButton">Add fav</button>
         </Link>
+        <button onClick={()=>addFav()} className="favButton">Add fav</button>
     </div>
   );
 };
